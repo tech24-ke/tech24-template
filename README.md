@@ -8,3 +8,17 @@ Monorepo of ready-to-launch website templates for Kenyan SMEs, maintained by **T
 ---
 
 ## Structure
+
+
+tech24-templates/
+├─ templates/
+│ ├─ next/ # Next.js templates (Vercel-ready)
+│ │ ├─ landing-default/
+│ │ ├─ restaurant-site/
+│ │ ├─ ecommerce-starter/
+│ │ ├─ portfolio-site/
+│ │ ├─ eventapp/
+│ │ ├─ salon-glowpro/ # (new)
+│ │ └─ cafe-dineeasy/ # (new)
+│ └─ wp/ # WordPress twins (selected sectors)
+└─ shared/ # brand assets & docs
