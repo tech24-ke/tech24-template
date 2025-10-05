@@ -12,9 +12,16 @@ export default function Home() {
       <header className="border-b border-black/5 bg-white/80 backdrop-blur">
         <div className="mx-auto max-w-6xl px-4 py-3 flex items-center justify-between">
           <div className="flex items-center gap-3">
-            <div className="size-8 rounded-xl bg-[linear-gradient(135deg,#ff6a00,#ff3d00)]" />
+            <Image
+              src="/logo.png"
+              alt={`${site.brand} logo`}
+              width={40}
+              height={40}
+              className="rounded-xl object-contain"
+            />
             <div className="font-semibold">{site.brand}</div>
           </div>
+
           <div className="hidden md:flex items-center gap-6 text-sm text-slate-600">
             <span>📍 {site.contact.addressLine}, {site.contact.city}</span>
             <span>🕘 {site.hours[0].d}: {site.hours[0].h}</span>
