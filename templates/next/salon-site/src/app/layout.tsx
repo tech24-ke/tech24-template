@@ -9,14 +9,20 @@ export const metadata: Metadata = {
     title: site.metaTitle,
     description: site.metaDescription,
     url: site.baseUrl,
-    siteName: site.brand
+    siteName: site.brand,
   },
-  metadataBase: new URL(site.baseUrl)
+  metadataBase: new URL(site.baseUrl),
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" suppressHydrationWarning>
+      <head>
+        {/* ✅ Favicon + social icon */}
+        <link rel="icon" href="/favicon.png" type="image/png" />
+        <link rel="apple-touch-icon" href="/favicon.png" />
+        <meta name="theme-color" content="#e7a6a0" />
+      </head>
       <body>{children}</body>
     </html>
   );
