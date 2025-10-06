@@ -108,7 +108,7 @@ function HeroCarousel({
           </p>
           <div className="flex flex-wrap justify-center gap-3 mt-8">
             <a
-              href={whatsappRR("Hi! I&apos;m interested in the Event website template.")}
+              href={whatsappRR("Hi! I am interested in the Event website template.")}
               target="_blank" rel="noopener"
               className="rounded-full bg-[#25d366] text-white px-6 py-3 font-medium hover:bg-[#1eb053] transition"
             >
@@ -198,7 +198,7 @@ export default function Page() {
 
           <div className="flex items-center gap-3">
             <a
-              href={whatsappRR("Hi! I&apos;d like a quick demo of the Event template.")}
+              href={whatsappRR("Hi! I would like a quick demo of the Event template.")}
               target="_blank" rel="noopener"
               className="rounded-full px-4 py-2 text-sm border border-white/15 text-white/90 hover:bg-white/10 transition"
             >
@@ -246,7 +246,7 @@ export default function Page() {
           </ol>
           <div className="text-center mt-8">
             <a
-              href={whatsappRR("Hi! I&apos;d like to RSVP for the event.")}
+              href={whatsappRR("Hi! I would like to RSVP for the event.")}
               target="_blank"
               rel="noopener"
               className="inline-block rounded-full bg-[#25d366] text-white px-6 py-3 font-medium hover:bg-[#1eb053] transition"
@@ -270,7 +270,7 @@ export default function Page() {
               <div className="text-2xl font-bold mb-2 text-white">{p.price}</div>
               <p className="text-sm text-white/70 mb-4">{p.note}</p>
               <a
-                href={whatsappRR(`Hi, I&apos;m interested in the ${p.name} ticket.`)}
+                href={whatsappRR(`Hi, I am interested in the ${p.name} ticket.`)}
                 target="_blank" rel="noopener"
                 className="mt-auto inline-block rounded-full bg-[#25d366] text-white px-5 py-2 text-sm font-medium hover:bg-[#1eb053] transition"
               >
@@ -315,9 +315,9 @@ export default function Page() {
 
       {/* Contact */}
       <section id="contact" className="py-20 bg-[#0e1322] text-center">
-        <h2 className="text-2xl font-semibold mb-6 text-white">Let&apos;s Build Your Event</h2>
+        <h2 className="text-2xl font-semibold mb-6 text-white">Let us Build Your Event</h2>
         <p className="text-white/70 mb-6">
-          We&apos;ll set up your event site and connect your WhatsApp - ready to go in days.
+          We will set up your event site and connect your WhatsApp - ready to go in days.
         </p>
         <div className="flex flex-wrap gap-3 justify_center text-sm text-white/80 mb-6">
           <span>Tel: {site.contact.phone}</span>
@@ -326,7 +326,7 @@ export default function Page() {
         </div>
         <div className="flex flex-wrap justify-center gap-4">
           <a
-            href={whatsappRR("Hi! I&apos;d like to get started with the Event template.")}
+            href={whatsappRR("Hi! I would like to get started with the Event template.")}
             target="_blank"
             rel="noopener"
             className="inline-block rounded-full bg-[#25d366] text-white px-6 py-3 font-medium hover:bg-[#1eb053] transition"
