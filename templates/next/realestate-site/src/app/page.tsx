@@ -56,9 +56,9 @@ export default function Page() {
   // ----- Simple Carousel -----
   const slides = useMemo(
     () => [
-      { src: "/templates/realestate-hero.jpg", alt: "Premium villa exterior" },
-      { src: "/templates/realestate-apartment2.jpg", alt: "Modern living room" },
-      { src: "/templates/realestate-city.jpg", alt: "City skyline at dusk" },
+      { src: "/templates/realestate-hero.jpg",      alt: "Modern villa exterior, Karen" },
+  { src: "/templates/realestate-apartment2.jpg",    alt: "Bright living room with large windows" },
+  { src: "/templates/realestate-city.jpg",      alt: "Nairobi skyline at dusk" },
     ],
     []
   );
