@@ -56,7 +56,7 @@ export default function Page() {
   // ----- Simple Carousel -----
   const slides = useMemo(
     () => [
-      { src: "/templates/realestate-hero.jpg",      alt: "Modern villa exterior, Karen" },
+      { src: "/templates/realestate-villa.jpg",      alt: "Modern villa exterior, Karen" },
   { src: "/templates/realestate-apartment2.jpg",    alt: "Bright living room with large windows" },
   { src: "/templates/realestate-city.jpg",      alt: "Nairobi skyline at dusk" },
     ],
@@ -134,11 +134,12 @@ export default function Page() {
             src={s.src}
             alt={s.alt}
             fill
-            priority={i === idx}
-            className={`object-cover transition-opacity duration-700 ${i === idx ? "opacity-100" : "opacity-0"}`}
+            priority={i === 0}
+            className="object-cover object-[50%_38%]" 
           />
         ))}
-        <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(7,14,23,0.55)_0%,rgba(7,14,23,0.70)_40%,rgba(7,14,23,0.90)_100%)]" />
+        <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(7,14,23,0.65)_0%,rgba(7,14,23,0.78)_40%,rgba(7,14,23,0.92)_100%)]" />
+
 
         {/* content */}
         <div className="relative z-10 h-full max-w-6xl mx-auto px-6 flex flex-col items-center justify-center text-center text-white">
@@ -162,9 +163,10 @@ export default function Page() {
                 <option>Rent</option>
                 <option>Commercial</option>
               </select>
-              <button className="h-12 rounded-xl bg-[#0B1B3A] text-white font-semibold hover:opacity-90 transition">
+              <Link href="#listings" className="h-12 rounded-xl bg-[#0B1B3A] text-white font-semibold px-6 grid place-items-center hover:opacity-90">
                 Explore Properties
-              </button>
+              </Link>
+
             </div>
             <p className="text-xs text-gray-200 mt-2">Tip: Try “Karen 4 bedroom” or “Westlands office”.</p>
           </div>
