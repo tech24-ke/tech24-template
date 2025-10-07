@@ -7,23 +7,18 @@ import { site } from "@/site.config";
 const wa = (msg: string) => whatsappLink(site.contact.whatsapp, msg);
 
 /** Tiny inline icons */
-
 function IconFamily({ className = "" }) {
   return (
     <svg viewBox="0 0 48 48" className={className} fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
-      {/* parents */}
       <circle cx="16" cy="16" r="4" />
       <circle cx="32" cy="16" r="4" />
       <path d="M10 30v-3a6 6 0 0 1 12 0v3" />
       <path d="M26 30v-3a6 6 0 0 1 12 0v3" />
-      {/* child */}
       <circle cx="24" cy="22" r="3" />
       <path d="M20 34v-3a4 4 0 0 1 8 0v3" />
     </svg>
   );
 }
-
-
 function IconScales({ className = "" }) {
   return (
     <svg viewBox="0 0 48 48" className={className} fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
@@ -50,36 +45,15 @@ function IconShield({ className = "" }) {
 
 export default function Page() {
   const TEAM = [
-  { name: "Adv. Jane W.", role: "Managing Partner", img: "team-1.jpg", focus: "center 22%" },
-  { name: "Adv. Peter K.", role: "Senior Associate", img: "team-2.jpg", focus: "55% 20%" },
-];
+    { name: "Adv. Jane W.", role: "Managing Partner", img: "team-1.jpg", focus: "center 22%" },
+    { name: "Adv. Peter K.", role: "Senior Associate", img: "team-2.jpg", focus: "55% 20%" },
+  ];
 
-  /** Replace images with your own under /public/templates/law/ */
   const PRACTICE_AREAS = [
-    {
-      title: "Corporate & Commercial",
-      desc: "Company formation, contracts, compliance, negotiations.",
-      img: "/templates/law/corporate.jpg",
-      icon: <IconDoc className="h-8 w-8" />,
-    },
-    {
-      title: "Real Estate & Conveyancing",
-      desc: "Title searches, transfers, leases, due diligence.",
-      img: "/templates/law/conveyancing.jpg",
-      icon: <IconScales className="h-8 w-8" />,
-    },
-    {
-      title: "Family Law",
-      desc: "Divorce, custody, maintenance, succession planning.",
-      img: "/templates/law/family.jpg",
-      icon: <IconFamily className="h-8 w-8" />,
-    },
-    {
-      title: "Criminal Defense",
-      desc: "Bail, arraignment, trial strategy, appeals.",
-      img: "/templates/law/criminal.jpg",
-      icon: <IconShield className="h-8 w-8" />,
-    },
+    { title: "Corporate & Commercial", desc: "Company formation, contracts, compliance, negotiations.", img: "/templates/law/corporate.jpg", icon: <IconDoc className="h-8 w-8" /> },
+    { title: "Real Estate & Conveyancing", desc: "Title searches, transfers, leases, due diligence.", img: "/templates/law/conveyancing.jpg", icon: <IconScales className="h-8 w-8" /> },
+    { title: "Family Law", desc: "Divorce, custody, maintenance, succession planning.", img: "/templates/law/family.jpg", icon: <IconFamily className="h-8 w-8" /> },
+    { title: "Criminal Defense", desc: "Bail, arraignment, trial strategy, appeals.", img: "/templates/law/criminal.jpg", icon: <IconShield className="h-8 w-8" /> },
   ];
 
   const TESTIMONIALS = [
@@ -88,7 +62,7 @@ export default function Page() {
   ];
 
   return (
-    <main className="min-h-dvh bg-[#0B1B3A] text-[#E8ECF4] antialiased">
+    <main className="min-h-dvh bg-[#11264D] text-[#E8ECF4] antialiased">
       {/* Top ribbon */}
       <div className="w-full bg-[#D4AF37]/15 text-[#D4AF37] text-center text-sm py-2">
         <span className="font-medium">Advocate Pro</span> — Nairobi Advocates & Legal Consultants
@@ -108,30 +82,16 @@ export default function Page() {
             <a href="#pricing" className="hover:text-white">Pricing</a>
             <a href="#contact" className="hover:text-white">Contact</a>
           </nav>
-          <a
-            href={wa("Hello, I’d like to book a legal consultation.")}
-            target="_blank"
-            rel="noopener"
-            className="rounded-full px-4 py-2 text-sm border border-white/15 text-white/90 hover:bg-white/10 transition"
-          >
+          <a href={wa("Hello, I’d like to book a legal consultation.")} target="_blank" rel="noopener" className="rounded-full px-4 py-2 text-sm border border-white/15 text-white/90 hover:bg-white/10 transition">
             Book Consultation
           </a>
         </div>
       </header>
 
-      {/* Hero */}
-      <section
-        id="hero"
-        className="relative overflow-hidden"
-        style={{
-          background: "linear-gradient(135deg, #0B1B3A 0%, #11264D 60%, #0B1B3A 100%)",
-        }}
-      >
-        {/* BIG watermark */}
-        <div className="pointer-events-none absolute inset-0 flex items-center justify-center">
-          <div className="text-[20rem] sm:text-[28rem] font-black tracking-tighter text-white/5 select-none leading-none">
-            LAW
-          </div>
+      {/* Hero (brighter gradient + softer watermark) */}
+      <section id="hero" className="relative overflow-hidden" style={{ background: "linear-gradient(135deg, #102B5A 0%, #0E2347 60%, #0C1F3F 100%)" }}>
+        <div className="pointer-events-none absolute inset-0 flex items-center justify-center opacity-[0.04]">
+          <div className="text-[20rem] sm:text-[28rem] font-black tracking-tighter text-white select-none leading-none">LAW</div>
         </div>
 
         <div className="relative max-w-6xl mx-auto px-6 py-20">
@@ -139,18 +99,10 @@ export default function Page() {
             <h1 className="text-4xl font-extrabold text-white">Justice. Expertise. Integrity.</h1>
             <p className="text-white/80 text-lg mt-4">Your trusted legal partner in Nairobi.</p>
             <div className="flex flex-wrap justify-center gap-4 mt-8">
-              <a
-                href={wa("Hello, I’d like to book a legal consultation.")}
-                target="_blank"
-                rel="noopener"
-                className="rounded-full bg-[#D4AF37] text-[#0B1B3A] px-6 py-3 font-semibold hover:brightness-110 transition"
-              >
+              <a href={wa("Hello, I’d like to book a legal consultation.")} target="_blank" rel="noopener" className="rounded-full bg-[#D4AF37] text-[#0B1B3A] px-6 py-3 font-semibold hover:brightness-110 transition">
                 Chat on WhatsApp
               </a>
-              <a
-                href="#practice-areas"
-                className="rounded-full border border-white/20 text-white/90 px-6 py-3 font-medium hover:bg-white/10 transition"
-              >
+              <a href="#practice-areas" className="rounded-full border border-white/20 text-white/90 px-6 py-3 font-medium hover:bg-white/10 transition">
                 Explore Practice Areas
               </a>
             </div>
@@ -171,16 +123,13 @@ export default function Page() {
           </div>
         </div>
 
-        {/* angled divider */}
-        <div className="h-16 bg-[#0B1B3A]" style={{ clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 40%)" }} />
+        <div className="h-16 bg-[#11264D]" style={{ clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 40%)" }} />
       </section>
 
-      {/* Practice Areas */}
-      <section id="practice-areas" className="py-20 bg-[#0B1B3A]">
+      {/* Practice Areas (dark) */}
+      <section id="practice-areas" className="py-20 bg-[#11264D]">
         <div className="max-w-6xl mx-auto px-6">
-          <h2 className="text-3xl font-bold text-white inline-block border-b-2 border-transparent hover:border-[#D4AF37] transition">
-            Practice Areas
-          </h2>
+          <h2 className="text-3xl font-bold text-white inline-block border-b-2 border-transparent hover:border-[#D4AF37] transition">Practice Areas</h2>
           <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {PRACTICE_AREAS.map((a) => (
               <div key={a.title} className="rounded-2xl border border-white/10 bg-white/5 p-6 hover:shadow-lg transition">
@@ -193,94 +142,69 @@ export default function Page() {
         </div>
       </section>
 
-      {/* Our Team */}
-      
-<section id="team" className="bg-[#0B1B3A]">
-  <div className="mx-auto max-w-6xl px-6 py-20 text-white">
-    <h2 className="text-3xl font-bold inline-block border-b-2 border-transparent hover:border-[#D4AF37] transition">
-      Our Team
-    </h2>
-    <p className="mt-3 text-white/80 max-w-2xl">
-      Over 15 years of combined experience representing clients across Kenya.
-    </p>
+      {/* Our Team (mid-navy block + portrait-friendly 4:3) */}
+      <section id="team" className="bg-[#0F1F3C]">
+        <div className="mx-auto max-w-6xl px-6 py-20 text-white">
+          <h2 className="text-3xl font-bold inline-block border-b-2 border-transparent hover:border-[#D4AF37] transition">Our Team</h2>
+          <p className="mt-3 text-white/80 max-w-2xl">Over 15 years of combined experience representing clients across Kenya.</p>
 
-    <div className="mt-10 grid gap-6 sm:grid-cols-2">
-      {TEAM.map((m) => (
-        <article
-          key={m.name}
-          className="group rounded-2xl bg-white/5 p-6 backdrop-blur border border-white/10 h-full flex flex-col"
-        >
-          {/* Image with fixed aspect for uniformity */}
-          <div className="aspect-[16/9] overflow-hidden rounded-xl">
-            <img
-              src={m.img}
-              alt={m.name}
-              className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
-              style={{ objectPosition: m.focus || "center top" }}
-            />
+          <div className="mt-10 grid gap-6 sm:grid-cols-2">
+            {TEAM.map((m) => (
+              <article key={m.name} className="group rounded-2xl bg-white/5 p-6 backdrop-blur border border-white/10 h-full flex flex-col">
+                <div className="aspect-[4/3] overflow-hidden rounded-xl">
+                  <img src={m.img} alt={m.name} className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.03]" style={{ objectPosition: (m as any).focus || "center 25%" }} />
+                </div>
+                <div className="mt-4">
+                  <div className="font-semibold text-white">{m.name}</div>
+                  <div className="text-white/70 text-sm">{m.role}</div>
+                </div>
+              </article>
+            ))}
           </div>
+        </div>
+      </section>
 
-          {/* Text */}
-          <div className="mt-4">
-            <div className="font-semibold text-white">{m.name}</div>
-            <div className="text-white/70 text-sm">{m.role}</div>
-          </div>
-        </article>
-      ))}
-    </div>
-  </div>
-</section>
-      {/* Testimonials */}
-      <section id="testimonials" className="bg-[#0B1B3A]">
+      {/* Testimonials (light section for breath) */}
+      <section id="testimonials" className="bg-white text-[#1B2844]">
         <div className="mx-auto max-w-6xl px-6 py-20">
-          <h2 className="text-3xl font-bold text-white inline-block border-b-2 border-transparent hover:border-[#D4AF37] transition">
-            What Clients Say
-          </h2>
+          <h2 className="text-3xl font-bold inline-block border-b-2 border-transparent hover:border-[#D4AF37] transition">What Clients Say</h2>
           <div className="mt-8 grid gap-6 md:grid-cols-2">
             {TESTIMONIALS.map((t, i) => (
-              <blockquote key={i} className="rounded-2xl border border-white/10 bg-white/5 p-6">
-                <p className="text-white">“{t.q}”</p>
-                <footer className="mt-3 text-white/70 text-sm">— {t.a}</footer>
+              <blockquote key={i} className="rounded-2xl border border-gray-200 bg-[#F7F9FC] p-6">
+                <p className="text-[#0F1F3C]">“{t.q}”</p>
+                <footer className="mt-3 text-[#4A5877] text-sm">— {t.a}</footer>
               </blockquote>
             ))}
           </div>
         </div>
       </section>
 
-      {/* How it works */}
-      <section id="how" className="relative bg-[#0B1B3A]">
-        <svg aria-hidden viewBox="0 0 1440 120" className="w-full text-[#0B1B3A]">
-          <path fill="#0B1B3A" d="M0 0h1440v60L0 120z" />
-        </svg>
+      {/* How it works (already light center band) */}
+      <section id="how" className="relative bg-[#11264D]">
+        <svg aria-hidden viewBox="0 0 1440 120" className="w-full text-[#11264D]"><path fill="#11264D" d="M0 0h1440v60L0 120z" /></svg>
         <div className="bg-white text-[#202327]">
           <div className="max-w-6xl mx-auto px-6 py-16">
             <h2 className="text-2xl font-semibold text-center mb-10">How it works</h2>
             <div className="grid md:grid-cols-3 gap-6">
-              <div className="rounded-2xl border border-gray-200 bg-white p-6">
-                <div className="text-xs tracking-wide uppercase text-gray-500">Step 1</div>
-                <h3 className="font-semibold mt-1">Tell us your matter</h3>
-                <p className="text-sm text-gray-600 mt-2">Share details via WhatsApp or email for a quick review.</p>
-              </div>
-              <div className="rounded-2xl border border-gray-200 bg-white p-6">
-                <div className="text-xs tracking-wide uppercase text-gray-500">Step 2</div>
-                <h3 className="font-semibold mt-1">Consult with an advocate</h3>
-                <p className="text-sm text-gray-600 mt-2">We advise on options, risks, and next steps.</p>
-              </div>
-              <div className="rounded-2xl border border-gray-200 bg-white p-6">
-                <div className="text-xs tracking-wide uppercase text-gray-500">Step 3</div>
-                <h3 className="font-semibold mt-1">Representation & follow-up</h3>
-                <p className="text-sm text-gray-600 mt-2">We prepare documents and represent you as needed.</p>
-              </div>
+              {[
+                ["Step 1", "Tell us your matter", "Share details via WhatsApp or email for a quick review."],
+                ["Step 2", "Consult with an advocate", "We advise on options, risks, and next steps."],
+                ["Step 3", "Representation & follow-up", "We prepare documents and represent you as needed."],
+              ].map(([s, t, d]) => (
+                <div key={s} className="rounded-2xl border border-gray-200 bg-white p-6">
+                  <div className="text-xs tracking-wide uppercase text-gray-500">{s}</div>
+                  <h3 className="font-semibold mt-1">{t}</h3>
+                  <p className="text-sm text-gray-600 mt-2">{d}</p>
+                </div>
+              ))}
             </div>
           </div>
         </div>
-        <svg aria-hidden viewBox="0 0 1440 120" className="w-full rotate-180">
-          <path fill="#0B1B3A" d="M0 0h1440v60L0 120z" />
-        </svg>
+        <svg aria-hidden viewBox="0 0 1440 120" className="w-full rotate-180"><path fill="#11264D" d="M0 0h1440v60L0 120z" /></svg>
       </section>
 
-      {/* Pricing */}
-      <section id="pricing" className="py-20 bg-[#0B1B3A]">
+      {/* Pricing (mid-navy) */}
+      <section id="pricing" className="py-20 bg-[#0F1F3C]">
         <div className="max-w-5xl mx-auto px-6 grid md:grid-cols-3 gap-6">
           {[
             { name: "Consultation", price: "KES 4,999", note: "Up to 45 min — in-person or online" },
@@ -291,12 +215,7 @@ export default function Page() {
               <h3 className="font-semibold text-lg text-white mb-1">{p.name}</h3>
               <div className="text-2xl font-bold text-white mb-2">{p.price}</div>
               <p className="text-sm text-white/70 mb-4">{p.note}</p>
-              <a
-                href={wa(`Hello, I'm interested in the ${p.name} option.`)}
-                target="_blank"
-                rel="noopener"
-                className="mt-auto inline-block rounded-full bg-[#D4AF37] text-[#0B1B3A] px-5 py-2 text-sm font-semibold hover:brightness-110 transition"
-              >
+              <a href={wa(`Hello, I'm interested in the ${p.name} option.`)} target="_blank" rel="noopener" className="mt-auto inline-block rounded-full bg-[#D4AF37] text-[#0B1B3A] px-5 py-2 text-sm font-semibold hover:brightness-110 transition">
                 Book on WhatsApp
               </a>
             </div>
@@ -304,15 +223,11 @@ export default function Page() {
         </div>
       </section>
 
-      {/* Templates (cross-sell) */}
-      <section id="templates" className="py-20 px-6 bg-[#0B1B3A]">
+      {/* Templates (dark) */}
+      <section id="templates" className="py-20 px-6 bg-[#11264D]">
         <h2 className="text-center text-2xl font-semibold mb-10 text-white">More Templates</h2>
         <div className="max-w-6xl mx-auto grid sm:grid-cols-2 md:grid-cols-3 gap-8">
-          {[
-            { title: "Salon",  preview: "https://salon.tech24.co.ke", img:"salon.jpg" },
-            { title: "Shop",   preview: "https://shop.tech24.co.ke",  img:"shop.jpg" },
-            { title: "Event",  preview: "https://event.tech24.co.ke", img:"event.jpg" },
-          ].map((t, i) => (
+          {[{ title: "Salon", preview: "https://salon.tech24.co.ke", img: "salon.jpg" }, { title: "Shop", preview: "https://shop.tech24.co.ke", img: "shop.jpg" }, { title: "Event", preview: "https://event.tech24.co.ke", img: "event.jpg" }].map((t, i) => (
             <div key={i} className="rounded-2xl border border-white/10 bg-white/5 p-5">
               <img src={t.img} alt="" className="rounded-lg mb-4" />
               <div className="flex items-center justify-between">
@@ -320,11 +235,7 @@ export default function Page() {
                   <h4 className="font-semibold text-white">{t.title}</h4>
                   <a href={t.preview} target="_blank" className="text-sm text-white/70 hover:text-white">Preview</a>
                 </div>
-                <a
-                  href={wa(`Hello! I want to use the ${t.title} template.`)}
-                  target="_blank" rel="noopener"
-                  className="rounded-full border border-white/20 text-white/90 px-4 py-2 text-sm hover:bg-white/10 transition"
-                >
+                <a href={wa(`Hello! I want to use the ${t.title} template.`)} target="_blank" rel="noopener" className="rounded-full border border-white/20 text-white/90 px-4 py-2 text-sm hover:bg-white/10 transition">
                   Use this
                 </a>
               </div>
@@ -333,46 +244,30 @@ export default function Page() {
         </div>
       </section>
 
-      {/* Contact */}
-      <section id="contact" className="py-20 bg-[#0B1B3A] text-center">
+      {/* Contact (dark) */}
+      <section id="contact" className="py-20 bg-[#11264D] text-center">
         <h2 className="text-2xl font-semibold mb-6 text-white">Book Your Consultation</h2>
         <p className="text-white/70 mb-6">{site.address}</p>
         <div className="flex flex-wrap gap-3 justify-center text-sm text-white/80 mb-6">
-          <span>Tel: {site.contact.phone}</span>
-          <span> | </span>
-          <span>Email: {site.contact.email}</span>
+          <span>Tel: {site.contact.phone}</span><span> | </span><span>Email: {site.contact.email}</span>
         </div>
         <div className="flex flex-wrap justify-center gap-4">
-          <a
-            href={wa("Hello, I’d like to book a legal consultation.")}
-            target="_blank"
-            rel="noopener"
-            className="inline-block rounded-full bg-[#D4AF37] text-[#0B1B3A] px-6 py-3 font-semibold hover:brightness-110 transition"
-          >
+          <a href={wa("Hello, I’d like to book a legal consultation.")} target="_blank" rel="noopener" className="inline-block rounded-full bg-[#D4AF37] text-[#0B1B3A] px-6 py-3 font-semibold hover:brightness-110 transition">
             Chat on WhatsApp
           </a>
-          <a
-            href={site.contact.mapsUrl}
-            target="_blank"
-            className="inline-block rounded-full border border-white/20 text-white/90 px-6 py-3 font-medium hover:bg-white/10 transition"
-          >
+          <a href={site.contact.mapsUrl} target="_blank" className="inline-block rounded-full border border-white/20 text-white/90 px-6 py-3 font-medium hover:bg-white/10 transition">
             Open in Maps
           </a>
         </div>
       </section>
 
       {/* Footer */}
-      <footer className="py-6 text-center text-sm text-white/60 border-t border-white/10 bg-[#0B1B3A]">
+      <footer className="py-6 text-center text-sm text-white/60 border-t border-white/10 bg-[#11264D]">
         <p>© {new Date().getFullYear()} Tech24 Agency — All rights reserved.</p>
       </footer>
 
       {/* Floating WA dock */}
-      <a
-        href={wa("Hi! Quick question about Advocate Pro.")}
-        target="_blank"
-        rel="noopener"
-        className="fixed bottom-5 right-5 z-50 rounded-full shadow-xl bg-[#D4AF37] text-[#0B1B3A] px-5 py-3 font-semibold hover:brightness-110 transition"
-      >
+      <a href={wa("Hi! Quick question about Advocate Pro.")} target="_blank" rel="noopener" className="fixed bottom-5 right-5 z-50 rounded-full shadow-xl bg-[#D4AF37] text-[#0B1B3A] px-5 py-3 font-semibold hover:brightness-110 transition">
         Chat on WhatsApp
       </a>
     </main>
