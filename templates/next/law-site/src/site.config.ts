@@ -3,7 +3,7 @@
   baseUrl: "https://law.tech24.co.ke",
   metaTitle: "Advocate Pro · Law Firm · Nairobi",
   metaDescription:
-    "Justice. Expertise. Integrity. Trusted legal representation in Nairobi: Corporate, Real Estate & Conveyancing, Family, Criminal Defense.",
+    "Justice. Expertise. Integrity. Your Trusted legal representation in Nairobi: Corporate, Real Estate & Conveyancing, Family, Criminal Defense.",
   address: "CBD, Nairobi, Kenya",
   contact: {
     phone: "+254 748 699 460",
