@@ -64,11 +64,22 @@ export default function Page() {
       </div>
 
       {/* ===== NAV ===== */}
-      <header className="border-b border-gray-100">
+      <header className="sticky top-0 z-40 bg-white/90 backdrop-blur border-b border-gray-100">
         <div className="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
-          <Link href="/" className="flex items-center gap-2">
-            <Image src="/logo.png" alt={BRAND} width={28} height={28} />
-            <span className="font-semibold">{BRAND}</span>
+          <Link href="/" className="flex items-center gap-3 group">
+            <Image
+              src="/brand/realestate-logo.svg"
+              alt={site.brand}
+              width={34}
+              height={34}
+              className="shrink-0"
+            />
+            <div className="leading-tight">
+              <div className="font-semibold tracking-tight text-gray-900 group-hover:text-[#0B1B3A] transition">
+                {site.brand}
+              </div>
+              <div className="text-[11px] text-gray-500 -mt-0.5">Real Estate Agency</div>
+            </div>
           </Link>
           <nav className="hidden md:flex items-center gap-6 text-sm">
             <a href="#listings" className="hover:text-[#0B1B3A]">Listings</a>
@@ -78,6 +89,7 @@ export default function Page() {
           </nav>
         </div>
       </header>
+
 
       {/* ===== HERO WITH SEARCH ===== */}
       <section className="relative h-[78vh] min-h-[560px] overflow-hidden">
