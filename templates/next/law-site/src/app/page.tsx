@@ -50,18 +50,8 @@ function IconShield({ className = "" }) {
 
 export default function Page() {
   const TEAM = [
-  {
-    name: "Adv. Jane W.",
-    role: "Managing Partner",
-    img: "team-1.jpg",
-    focus: "center 30%", // move viewport up to show face
-  },
-  {
-    name: "Adv. Peter K.",
-    role: "Senior Associate",
-    img: "team-2.jpg",
-    focus: "60% 30%", // a bit right + up
-  },
+  { name: "Adv. Jane W.", role: "Managing Partner", img: "team-1.jpg", focus: "center 22%" },
+  { name: "Adv. Peter K.", role: "Senior Associate", img: "team-2.jpg", focus: "55% 20%" },
 ];
 
   /** Replace images with your own under /public/templates/law/ */
