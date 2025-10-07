@@ -3,6 +3,13 @@ import React from "react";
 import { whatsappLink } from "@/app/lib/whatsapp";
 import { site } from "@/site.config";
 
+type TeamMember = {
+  name: string;
+  role: string;
+  img: string;
+  focus?: string;
+};
+
 /** Stable WA link builder (no hydration mismatch) */
 const wa = (msg: string) => whatsappLink(site.contact.whatsapp, msg);
 
@@ -43,11 +50,11 @@ function IconShield({ className = "" }) {
   );
 }
 
-export default function Page() {
-  const TEAM = [
-    { name: "Adv. Jane W.", role: "Managing Partner", img: "team-1.jpg", focus: "center 22%" },
-    { name: "Adv. Peter K.", role: "Senior Associate", img: "team-2.jpg", focus: "55% 20%" },
-  ];
+export default function Page() {  
+  const TEAM: TeamMember[] = [
+  { name: "Adv. Jane W.", role: "Managing Partner", img: "team-1.jpg", focus: "center 22%" },
+  { name: "Adv. Peter K.", role: "Senior Associate", img: "team-2.jpg", focus: "55% 20%" },
+];
 
   const PRACTICE_AREAS = [
     { title: "Corporate & Commercial", desc: "Company formation, contracts, compliance, negotiations.", img: "/templates/law/corporate.jpg", icon: <IconDoc className="h-8 w-8" /> },
@@ -152,7 +159,7 @@ export default function Page() {
             {TEAM.map((m) => (
               <article key={m.name} className="group rounded-2xl bg-white/5 p-6 backdrop-blur border border-white/10 h-full flex flex-col">
                 <div className="aspect-[4/3] overflow-hidden rounded-xl">
-                  <img src={m.img} alt={m.name} className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.03]" style={{ objectPosition: (m as any).focus || "center 25%" }} />
+                  <img src={m.img} alt={m.name} className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.03]" style={{ objectPosition: m.focus ?? "center 25%" }}  />
                 </div>
                 <div className="mt-4">
                   <div className="font-semibold text-white">{m.name}</div>
