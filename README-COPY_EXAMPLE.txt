@@ -1,10 +1,10 @@
 # run at repo root
-$SrcDir = ".\event-site"      # adjust to your path
-$DstDir = ".\bnb-site"
-$OldSlug = "event-site"
-$NewSlug = "bnb-site"
-$OldName = "Event"
-$NewName = "Bnb"
+$SrcDir = ".\bnb-site"      # adjust to your path
+$DstDir = ".\law-site"
+$OldSlug = "bnb-site"
+$NewSlug = "law-site"
+$OldName = "Bnb"
+$NewName = "Law"
 
 # fallback WA numbers (your .wa-rr keeps working if present)
 $WaKenya   = "254748699460"
