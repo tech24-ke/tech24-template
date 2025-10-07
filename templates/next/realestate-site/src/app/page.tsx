@@ -18,6 +18,40 @@ const MAP_EMBED_SRC = `https://www.google.com/maps?q=${encodeURIComponent(
   ADDRESS
 )}&output=embed`;
 
+
+function ShieldCheckIcon(props: React.SVGProps<SVGSVGElement>) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" {...props}>
+      <path d="M12 3l7 3v5c0 5-3.5 8-7 10-3.5-2-7-5-7-10V6l7-3z" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
+      <path d="M9 12l2.2 2.2L15 10.5" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
+    </svg>
+  );
+}
+
+
+
+function SmileyIcon(props: React.SVGProps<SVGSVGElement>) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" {...props}>
+      <circle cx="12" cy="12" r="9" strokeWidth="1.8"/>
+      <circle cx="9" cy="10" r="1" fill="currentColor"/>
+      <circle cx="15" cy="10" r="1" fill="currentColor"/>
+      <path d="M8 14.5c1.2 1.2 2.6 1.8 4 1.8s2.8-.6 4-1.8" strokeWidth="1.8" strokeLinecap="round"/>
+    </svg>
+  );
+}
+
+function ChatBubbleIcon(props: React.SVGProps<SVGSVGElement>) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" {...props}>
+      <path d="M5 16l-1 4 4-1h9a3 3 0 003-3V7a3 3 0 00-3-3H7a3 3 0 00-3 3v9z" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
+      <path d="M8 9h8M8 12h6" strokeWidth="1.8" strokeLinecap="round"/>
+    </svg>
+  );
+}
+
+
+
 export default function Page() {
   // ----- Simple Carousel -----
   const slides = useMemo(
@@ -189,14 +223,16 @@ export default function Page() {
       <section id="why" className="bg-gray-50 py-16">
         <div className="max-w-6xl mx-auto px-6 grid md:grid-cols-3 gap-10">
           {[
-            { icon: "/icons/shield-check.svg", title: "Verified Homes", text: "Every listing inspected and validated — no surprises." },
-            { icon: "/icons/handshake.svg", title: "Trusted Agents", text: "Vetted professionals with local expertise and track records." },
-            { icon: "/icons/chat.svg", title: "Instant Support", text: "Ask on WhatsApp and get answers in minutes, not days." },
-          ].map((f) => (
-            <div key={f.title} className="text-center p-8 bg-white rounded-3xl shadow-sm">
-              <Image src={f.icon} alt={f.title} width={56} height={56} className="mx-auto mb-4" />
-              <h4 className="font-semibold text-lg mb-2">{f.title}</h4>
-              <p className="text-gray-600">{f.text}</p>
+            { Icon: ShieldCheckIcon, title: "Verified Homes", text: "Every listing inspected and validated — no surprises." },
+            { Icon: SmileyIcon,   title: "Trusted Agents", text: "Vetted professionals with local expertise and track records." },
+            { Icon: ChatBubbleIcon,  title: "Instant Support", text: "Ask on WhatsApp and get answers in minutes, not days." },
+          ].map(({ Icon, title, text }) => (
+            <div key={title} className="text-center p-8 bg-white rounded-3xl shadow-sm">
+              <div className="mx-auto mb-4 grid place-items-center h-16 w-16 rounded-full bg-[#0B1B3A]/5">
+                <Icon className="h-8 w-8 text-[#0B1B3A]" aria-hidden />
+              </div>
+              <h4 className="font-semibold text-lg mb-2">{title}</h4>
+              <p className="text-gray-600">{text}</p>
             </div>
           ))}
         </div>
