@@ -7,6 +7,23 @@ import { site } from "@/site.config";
 const wa = (msg: string) => whatsappLink(site.contact.whatsapp, msg);
 
 /** Tiny inline icons */
+
+function IconFamily({ className = "" }) {
+  return (
+    <svg viewBox="0 0 48 48" className={className} fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
+      {/* parents */}
+      <circle cx="16" cy="16" r="4" />
+      <circle cx="32" cy="16" r="4" />
+      <path d="M10 30v-3a6 6 0 0 1 12 0v3" />
+      <path d="M26 30v-3a6 6 0 0 1 12 0v3" />
+      {/* child */}
+      <circle cx="24" cy="22" r="3" />
+      <path d="M20 34v-3a4 4 0 0 1 8 0v3" />
+    </svg>
+  );
+}
+
+
 function IconScales({ className = "" }) {
   return (
     <svg viewBox="0 0 48 48" className={className} fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
@@ -32,6 +49,21 @@ function IconShield({ className = "" }) {
 }
 
 export default function Page() {
+  const TEAM = [
+  {
+    name: "Adv. Jane W.",
+    role: "Managing Partner",
+    img: "team-1.jpg",
+    focus: "center 30%", // move viewport up to show face
+  },
+  {
+    name: "Adv. Peter K.",
+    role: "Senior Associate",
+    img: "team-2.jpg",
+    focus: "60% 30%", // a bit right + up
+  },
+];
+
   /** Replace images with your own under /public/templates/law/ */
   const PRACTICE_AREAS = [
     {
@@ -50,7 +82,7 @@ export default function Page() {
       title: "Family Law",
       desc: "Divorce, custody, maintenance, succession planning.",
       img: "/templates/law/family.jpg",
-      icon: <IconShield className="h-8 w-8" />,
+      icon: <IconFamily className="h-8 w-8" />,
     },
     {
       title: "Criminal Defense",
@@ -172,32 +204,42 @@ export default function Page() {
       </section>
 
       {/* Our Team */}
-      <section id="team" className="bg-[#0B1B3A]">
-        <div className="mx-auto max-w-6xl px-6 py-20 text-white">
-          <h2 className="text-3xl font-bold inline-block border-b-2 border-transparent hover:border-[#D4AF37] transition">
-            Our Team
-          </h2>
-          <p className="mt-3 text-white/80 max-w-2xl">
-            Over 15 years of combined experience representing clients across Kenya.
-          </p>
+      
+<section id="team" className="bg-[#0B1B3A]">
+  <div className="mx-auto max-w-6xl px-6 py-20 text-white">
+    <h2 className="text-3xl font-bold inline-block border-b-2 border-transparent hover:border-[#D4AF37] transition">
+      Our Team
+    </h2>
+    <p className="mt-3 text-white/80 max-w-2xl">
+      Over 15 years of combined experience representing clients across Kenya.
+    </p>
 
-          <div className="mt-10 grid gap-6 sm:grid-cols-2">
-            {[
-              { name: "Adv. Jane W.", role: "Managing Partner", img: "/templates/law/team-1.jpg" },
-              { name: "Adv. Peter K.", role: "Senior Associate", img: "/templates/law/team-2.jpg" },
-            ].map((m) => (
-              <div key={m.name} className="rounded-2xl bg-white/5 p-6 backdrop-blur">
-                <img src={m.img} alt={m.name} className="h-40 w-full object-cover rounded-xl" />
-                <div className="mt-4">
-                  <div className="font-semibold">{m.name}</div>
-                  <div className="text-white/70 text-sm">{m.role}</div>
-                </div>
-              </div>
-            ))}
+    <div className="mt-10 grid gap-6 sm:grid-cols-2">
+      {TEAM.map((m) => (
+        <article
+          key={m.name}
+          className="group rounded-2xl bg-white/5 p-6 backdrop-blur border border-white/10 h-full flex flex-col"
+        >
+          {/* Image with fixed aspect for uniformity */}
+          <div className="aspect-[16/9] overflow-hidden rounded-xl">
+            <img
+              src={m.img}
+              alt={m.name}
+              className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
+              style={{ objectPosition: m.focus || "center top" }}
+            />
           </div>
-        </div>
-      </section>
 
+          {/* Text */}
+          <div className="mt-4">
+            <div className="font-semibold text-white">{m.name}</div>
+            <div className="text-white/70 text-sm">{m.role}</div>
+          </div>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>
       {/* Testimonials */}
       <section id="testimonials" className="bg-[#0B1B3A]">
         <div className="mx-auto max-w-6xl px-6 py-20">
@@ -277,9 +319,9 @@ export default function Page() {
         <h2 className="text-center text-2xl font-semibold mb-10 text-white">More Templates</h2>
         <div className="max-w-6xl mx-auto grid sm:grid-cols-2 md:grid-cols-3 gap-8">
           {[
-            { title: "Salon",  preview: "https://salon.tech24.co.ke", img:"/templates/cards/salon.jpg" },
-            { title: "Shop",   preview: "https://shop.tech24.co.ke",  img:"/templates/cards/shop.jpg" },
-            { title: "Event",  preview: "https://event.tech24.co.ke", img:"/templates/cards/event.jpg" },
+            { title: "Salon",  preview: "https://salon.tech24.co.ke", img:"salon.jpg" },
+            { title: "Shop",   preview: "https://shop.tech24.co.ke",  img:"shop.jpg" },
+            { title: "Event",  preview: "https://event.tech24.co.ke", img:"event.jpg" },
           ].map((t, i) => (
             <div key={i} className="rounded-2xl border border-white/10 bg-white/5 p-5">
               <img src={t.img} alt="" className="rounded-lg mb-4" />
