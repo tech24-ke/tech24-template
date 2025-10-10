@@ -2,6 +2,7 @@
 import React from "react";
 import { whatsappLink } from "@/app/lib/whatsapp";
 import { site } from "@/site.config";
+import Link from "next/link";
 
 type TeamMember = {
   name: string;
