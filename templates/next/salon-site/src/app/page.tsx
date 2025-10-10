@@ -272,15 +272,27 @@ export default function Page() {
 
       {/* Footer */}
       <footer className="border-t border-[#eadfd7]">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-8 text-sm flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className="text-[#7a6e64]">© {new Date().getFullYear()} Tech24 Templates</p>
-          <div className="flex gap-4">
-            <a href="#" className="hover:opacity-80">Privacy</a>
-            <a href="#" className="hover:opacity-80">Terms</a>
-            <a href="#" className="hover:opacity-80">Support</a>
-          </div>
-        </div>
-      </footer>
+	  <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-8 text-sm flex flex-col sm:flex-row items-center justify-between gap-4">
+		<p className="text-[#7a6e64]">
+		  © {new Date().getFullYear()}{" "}
+		  <a
+			href="https://tech24.co.ke"
+			target="_blank"
+			rel="noopener noreferrer"
+			className="font-bold underline hover:text-[#5e5046]"
+		  >
+			Tech24
+		  </a>{" "}
+		  Templates
+		</p>
+		<div className="flex gap-4">
+		  <a href="#" className="hover:opacity-80">Privacy</a>
+		  <a href="#" className="hover:opacity-80">Terms</a>
+		  <a href="#" className="hover:opacity-80">Support</a>
+		</div>
+	  </div>
+	</footer>
+
     </main>
   );
 }

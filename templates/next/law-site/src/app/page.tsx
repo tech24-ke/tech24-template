@@ -269,9 +269,35 @@ export default function Page() {
       </section>
 
       {/* Footer */}
-      <footer className="py-6 text-center text-sm text-white/60 border-t border-white/10 bg-[#11264D]">
-        <p>© {new Date().getFullYear()} Tech24 Agency — All rights reserved.</p>
-      </footer>
+      <footer className="border-t border-black/5">
+      <div className="mx-auto max-w-6xl px-4 py-10 text-sm text-slate-600">
+        <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-3">
+          <div>
+            © {new Date().getFullYear()}{" "}
+            <Link
+              href="https://tech24.co.ke"
+              className="font-bold underline hover:text-slate-800"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Tech24
+            </Link>
+            . All rights reserved.
+          </div>
+          <div className="flex gap-4">
+            <a
+              className="hover:underline"
+              href={`mailto:${site.contact.email}`}
+            >
+              {site.contact.email}
+            </a>
+            <Link href="/" className="hover:underline">
+              Home
+            </Link>
+          </div>
+        </div>
+      </div>
+    </footer>
 
       {/* Floating WA dock */}
       <a href={wa("Hi! Quick question about Advocate Pro.")} target="_blank" rel="noopener" className="fixed bottom-5 right-5 z-50 rounded-full shadow-xl bg-[#D4AF37] text-[#0B1B3A] px-5 py-3 font-semibold hover:brightness-110 transition">

@@ -305,9 +305,35 @@ export default function Page() {
       </section>
 
       {/* Footer */}
-      <footer className="py-6 text-center text-sm text-white/60 border-t border-white/10 bg-[#0b1020]">
-        <p>© {new Date().getFullYear()} Tech24 Agency — All rights reserved.</p>
-      </footer>
+      <footer className="border-t border-black/5">
+      <div className="mx-auto max-w-6xl px-4 py-10 text-sm text-slate-600">
+        <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-3">
+          <div>
+            © {new Date().getFullYear()}{" "}
+            <Link
+              href="https://tech24.co.ke"
+              className="font-bold underline hover:text-slate-800"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Tech24 Agency
+            </Link>
+            . All rights reserved.
+          </div>
+          <div className="flex gap-4">
+            <a
+              className="hover:underline"
+              href={`mailto:${site.contact.email}`}
+            >
+              {site.contact.email}
+            </a>
+            <Link href="/" className="hover:underline">
+              Home
+            </Link>
+          </div>
+        </div>
+      </div>
+    </footer>
 
       {/* Floating WA dock */}
       <a

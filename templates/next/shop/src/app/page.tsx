@@ -227,13 +227,25 @@ export default function Page() {
 
       {/* Footer */}
       <footer className="py-6 text-center text-sm text-gray-500 border-t border-gray-100">
-        <p>© {new Date().getFullYear()} Tech24 Agency — All rights reserved.</p>
-        <div className="flex justify-center gap-4 mt-2 text-[13px]">
-          <a href="https://salon.tech24.co.ke" target="_blank">Salon</a>
-          <a href="https://shop.tech24.co.ke" target="_blank">Shop</a>
-          <a href="https://event.tech24.co.ke" target="_blank">Event</a>
-        </div>
-      </footer>
+		  <p>
+			© {new Date().getFullYear()}{" "}
+			<a
+			  href="https://tech24.co.ke"
+			  target="_blank"
+			  rel="noopener noreferrer"
+			  className="font-bold underline hover:text-gray-700"
+			>
+			  Tech24
+			</a>{" "}
+			Agency — All rights reserved.
+		  </p>
+		  <div className="flex justify-center gap-4 mt-2 text-[13px]">
+			<a href="https://salon.tech24.co.ke" target="_blank" className="hover:text-gray-700">Salon</a>
+			<a href="https://shop.tech24.co.ke" target="_blank" className="hover:text-gray-700">Shop</a>
+			<a href="https://event.tech24.co.ke" target="_blank" className="hover:text-gray-700">Event</a>
+		  </div>
+		</footer>
+
     </main>
   );
 }
