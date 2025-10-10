@@ -305,6 +305,7 @@ export default function Page() {
       </section>
 
       {/* Footer */}
+	  
       <footer className="border-t border-black/5">
       <div className="mx-auto max-w-6xl px-4 py-10 text-sm text-slate-600">
         <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-3">
