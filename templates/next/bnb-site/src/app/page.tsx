@@ -318,7 +318,7 @@ export default function Page() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              Tech24 AgencyX
+              Tech24 Agency
             </Link>
             . All rights reserved.
           </div>
