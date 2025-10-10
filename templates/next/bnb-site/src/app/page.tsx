@@ -2,6 +2,7 @@
 import React from "react";
 import { whatsappLink } from "@/app/lib/whatsapp";
 import { site } from "@/site.config";
+import Link from "next/link";
 
 // Stable WA link builder (no hydration mismatch)
 const wa = (msg: string) => whatsappLink(site.contact.whatsapp, msg);
